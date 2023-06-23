@@ -48,25 +48,36 @@ namespace WindowsApp
         {
 
             var id = textBox1.Text;
+            try
+            {
 
-            var emp = await _client.GetFromJsonAsync<EmployeeData>($"Employees/{id}");
+                var emp = await _client.GetFromJsonAsync<EmployeeData>($"Employees/{id}");
 
-            textBoxFN.Text = emp.FirstName;
-            textBoxMN.Text = emp.MiddleName;
-            textBoxLN.Text = emp.LastName;
-            textBoxJobID.Text = Convert.ToString(emp.JobId);
-            textBoxS.Text = Convert.ToString(emp.Salary);
-            textBoxBD.Text = Convert.ToString(emp.BirthDate);
-            textBoxHD.Text = Convert.ToString(emp.HireDate);
-            textBoxDepId.Text = Convert.ToString(emp.DepartmentId);
-            textBoxManID.Text = Convert.ToString(emp.ManagerId);
-            textBoxPhone.Text = Convert.ToString(emp.Phone);
-            textBoxAdd.Text = emp.StreetAddress;
-            textBoxCity.Text = emp.City;
-            textBoxSP.Text = emp.StateProvince;
-            textBoxPhone.Text = emp.PostalCode;
-            textBoxCountryId.Text = Convert.ToString(emp.CountryId);
-        }
+                textBoxFN.Text = emp.FirstName;
+                textBoxMN.Text = emp.MiddleName;
+                textBoxLN.Text = emp.LastName;
+                textBoxJobID.Text = Convert.ToString(emp.JobId);
+                textBoxS.Text = Convert.ToString(emp.Salary);
+                textBoxBD.Text = Convert.ToString(emp.BirthDate);
+                textBoxHD.Text = Convert.ToString(emp.HireDate);
+                textBoxDepId.Text = Convert.ToString(emp.DepartmentId);
+                textBoxManID.Text = Convert.ToString(emp.ManagerId);
+                textBoxPhone.Text = Convert.ToString(emp.Phone);
+                textBoxAdd.Text = emp.StreetAddress;
+                textBoxCity.Text = emp.City;
+                textBoxSP.Text = emp.StateProvince;
+                textBoxPhone.Text = emp.PostalCode;
+                textBoxCountryId.Text = Convert.ToString(emp.CountryId);
+            }
+            catch (System.Text.Json.JsonException)
+            {
+            }
+
+
+            }
+            
+
+ 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

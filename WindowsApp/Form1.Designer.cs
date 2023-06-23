@@ -95,7 +95,7 @@
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
             pictureBox1.Cursor = Cursors.No;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(33, 84);
+            pictureBox1.Location = new Point(12, 74);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(279, 187);
@@ -106,16 +106,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Source Code Pro ExtraLight", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Italic, GraphicsUnit.Point);
             label1.Location = new Point(12, 30);
             label1.Name = "label1";
-            label1.Size = new Size(339, 36);
+            label1.Size = new Size(196, 24);
             label1.TabIndex = 5;
             label1.Text = "Employee Main menu";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 18F);
+            AutoScaleDimensions = new SizeF(7F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
             ClientSize = new Size(647, 544);
