@@ -61,9 +61,17 @@ namespace WindowsApp
             {
                 var emp = await _client.DeleteFromJsonAsync<EmployeeData>($"Employees/{id}");
             }
+            catch (System.Net.Http.HttpRequestException)
+            {
+                MessageBox.Show($"Employee ({id}) has not been found!");
+            }
             catch (System.Text.Json.JsonException)
             {
+                MessageBox.Show($"Employee ({id}) has been removed!");
+                this.Hide();
             }
+            
+            
 
 
 

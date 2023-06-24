@@ -36,11 +36,12 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(31, 149);
+            dataGridView1.Location = new Point(22, 89);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(820, 450);
+            dataGridView1.Size = new Size(671, 270);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -48,21 +49,23 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("SimSun", 18F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(31, 48);
+            label1.Location = new Point(22, 42);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(357, 36);
+            label1.Size = new Size(283, 24);
             label1.TabIndex = 1;
-            label1.Text = "View all Employees";
+            label1.Text = "Viewing all employees";
             label1.Click += label1_Click;
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1726, 725);
+            ClientSize = new Size(746, 435);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Form2";
             Text = "Employee Data";
             Load += Form2_Load;

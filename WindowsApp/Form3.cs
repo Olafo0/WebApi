@@ -68,6 +68,7 @@ namespace WindowsApp
                 textBoxSP.Text = emp.StateProvince;
                 textBoxPhone.Text = emp.PostalCode;
                 textBoxCountryId.Text = Convert.ToString(emp.CountryId);
+
             }
             catch (System.Text.Json.JsonException)
             {

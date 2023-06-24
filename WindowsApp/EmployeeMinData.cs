@@ -12,6 +12,8 @@ namespace WindowsApp
         public string? MiddleName { get; set; }
         public string LastName { get; set; } = null!;
         public string Phone { get; set; } = null!;
+
+        public string StreetAddress { get; set; } = null!;
         public int CountryId { get; set; }
     }
 }
