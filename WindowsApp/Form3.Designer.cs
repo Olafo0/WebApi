@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
             label2 = new Label();
             button1 = new Button();
             label3 = new Label();
@@ -62,6 +61,7 @@
             textBoxCountryId = new TextBox();
             textBoxPC = new TextBox();
             textBoxSP = new TextBox();
+            idCB = new ComboBox();
             SuspendLayout();
             // 
             // label1
@@ -74,22 +74,14 @@
             label1.TabIndex = 3;
             label1.Text = "View specifc Employee (ID)";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(150, 96);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(146, 31);
-            textBox1.TabIndex = 4;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(50, 99);
             label2.Name = "label2";
-            label2.Size = new Size(84, 25);
+            label2.Size = new Size(90, 25);
             label2.TabIndex = 5;
-            label2.Text = "Enter ID :";
+            label2.Text = "Select ID :";
             // 
             // button1
             // 
@@ -344,11 +336,21 @@
             textBoxSP.Size = new Size(145, 31);
             textBoxSP.TabIndex = 34;
             // 
+            // idCB
+            // 
+            idCB.DropDownStyle = ComboBoxStyle.DropDownList;
+            idCB.FormattingEnabled = true;
+            idCB.Location = new Point(150, 96);
+            idCB.Name = "idCB";
+            idCB.Size = new Size(155, 33);
+            idCB.TabIndex = 37;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1372, 590);
+            Controls.Add(idCB);
             Controls.Add(textBoxCountryId);
             Controls.Add(textBoxPC);
             Controls.Add(textBoxSP);
@@ -381,7 +383,6 @@
             Controls.Add(label3);
             Controls.Add(button1);
             Controls.Add(label2);
-            Controls.Add(textBox1);
             Controls.Add(label1);
             Name = "Form3";
             Text = "Form3";
@@ -393,7 +394,6 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
         private Label label2;
         private Button button1;
         private Label label3;
@@ -426,5 +426,6 @@
         private TextBox textBoxCountryId;
         private TextBox textBoxPC;
         private TextBox textBoxSP;
+        private ComboBox idCB;
     }
 }

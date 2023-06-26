@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Pipes;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
@@ -39,17 +40,35 @@ namespace WindowsApp
 
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private async void Form3_Load(object sender, EventArgs e)
         {
+            var empId = await _client.GetFromJsonAsync<List<EmployeeData>>("Employees");
+            List<int> idnum = new List<int>();
+
+            var ids = empId.Where(x => x.EmployeeId > 0).ToList();
+
+            for (int i = 0; i < ids.Count; i++)
+            {
+                int h = ids[i].EmployeeId;
+                idnum.Add(h);
+            }
+            List<int> unique_id = new HashSet<int>(idnum).ToList();
+
+            foreach (int x in unique_id)
+            {
+                idCB.Items.Add(x);
+            }
+
+
 
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-
-            var id = textBox1.Text;
             try
             {
+
+                var id = idCB.Items[idCB.SelectedIndex];
 
                 var emp = await _client.GetFromJsonAsync<EmployeeData>($"Employees/{id}");
 
@@ -73,12 +92,16 @@ namespace WindowsApp
             catch (System.Text.Json.JsonException)
             {
             }
-
+            catch (System.ArgumentOutOfRangeException)
+            {
 
             }
-            
 
- 
+
+        }
+
+
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
